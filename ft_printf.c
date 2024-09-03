@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:08:04 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/03 16:08:28 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/03 19:25:04 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,7 @@ int	ft_format_type(va_list arguments, const char letter)
 
 	size = 0;
 	if (letter == 'c')
+		size += ft_print_character(letter);
+	else if (letter == 's')
+		size += ft_print_string(letter);
 		
