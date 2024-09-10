@@ -6,14 +6,15 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:08:04 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/07 12:06:57 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:29:31 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_format_type(va_list arguments, char *str);
+//int	ft_format_type(va_list arguments, char *str);
 
 int	ft_print_char(char c)
 {
