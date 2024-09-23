@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:08:04 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/23 10:22:52 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:44:31 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,14 @@ int	ft_format_type(va_list arguments, char *str)
 		size += ft_print_char((char) va_arg(arguments, int));
 	else if (*str == 's')
 		size += ft_print_str(va_arg(arguments, char *));
+	else if (*str == 'p')
+		size += ft_print_ptr(va_arg(arguments, void *));
 	else if (*str == 'd' || *str == 'i')
 		size += ft_print_int(va_arg(arguments, int));
 	else if (*str == 'u')
 		size += ft_print_unsigned(va_arg(arguments, unsigned int));
+	else if (*str == 'x' || *str == 'X')
+		size += ft_print_hex(va_arg(arguments, unsigned int), *str);
 	else if (*str == '%')
 		size += ft_print_char('%');
 	else

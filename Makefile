@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 CFLAGS = -Wall -Wextra -Werror -I/libtf.h
-SRCS = ft_printf.c ft_print_numbers.c
+SRCS = ft_printf.c ft_print_numbers.c ft_print_ptr.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

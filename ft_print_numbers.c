@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:42:04 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/23 10:36:44 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:54:26 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,14 @@ int	ft_int_len(int n)
 {
 	int	len;
 
+	if (n == 0)
+		return (1);
 	len = 0;
+	if (n < 0)
+	{
+		n *= -1;
+		len++;
+	}
 	while (n)
 	{
 		n /= 10;
@@ -37,7 +44,7 @@ void	ft_putnbr(int n)
 	if (n < 0)
 	{
 		write(1, "-", 1);
-		n = -n;
+		n *= -1;
 	}
 	if (n >= 10)
 		ft_putnbr(n / 10);
@@ -69,3 +76,24 @@ int	ft_print_unsigned(unsigned int n)
 	len++;
 	return (len);
 }
+
+int	ft_print_hex(unsigned int n, char letter)
+{
+	char	*upper_hex_digits;
+	char	*lower_hex_digits;
+	int		len;
+
+	upper_hex_digits = "0123456789ABCDEF";
+	lower_hex_digits = "0123456789abcdef";
+	len = 0;
+
+	if (n >= 16)
+		len += ft_print_hex(n / 16, letter);
+	if (letter == 'x')
+		ft_print_char(lower_hex_digits[n % 16]);
+	else
+		ft_print_char(upper_hex_digits[n % 16]);
+	len++;
+	return (len);
+}
+
