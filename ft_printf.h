@@ -6,7 +6,7 @@
 /*   By: lrossi-u <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 11:33:55 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/17 18:45:23 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/23 10:24:55 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int		ft_printf(const char *s, ...);
 int		ft_format_type(va_list arguments, char *str);
 int		ft_int_len(int n);
 int		ft_print_int(int n);
+int		ft_print_unsigned(unsigned int n);
 
 #endif

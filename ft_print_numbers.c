@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:42:04 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/17 18:42:43 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/23 10:36:44 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_int_len(int n)
 {
 	int	len;
 
-	len = (n <= 0);  // Account for the negative sign or zero
+	len = 0;
 	while (n)
 	{
 		n /= 10;
@@ -29,10 +29,10 @@ int	ft_int_len(int n)
 
 void	ft_putnbr(int n)
 {
-	if (n == -2147483648)  // Handle INT_MIN explicitly
+	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
@@ -53,3 +53,19 @@ int	ft_print_int(int n)
 	return (len);
 }
 
+int	ft_print_unsigned(unsigned int n)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	if (n >= 10)
+		len += ft_print_unsigned(n / 10);
+	ft_print_char((n % 10) + '0');
+	len++;
+	return (len);
+}

@@ -11,8 +11,13 @@ int main(void)
 	int n1 = 10;
 	float n2 = 12.65;
 	printf("N1: %i\n", n1);
-	printf("N2: %f\n", n2);
+	printf("N2: %d\n", (int) n2);
 	ft_printf("FTprintf: %d\n", n1);
 	ft_printf("FTprintf: %d\n", (int) n2);
+	printf("Testing percentage %%\n");
+	ft_printf("FT Testing percentage %%\n");
+	unsigned int teta = 42424242;
+	printf("Testing u %u\n", teta);
+	ft_printf("FT Testing u %u\n", teta);
 	return (0);
 }
