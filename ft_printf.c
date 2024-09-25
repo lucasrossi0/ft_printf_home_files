@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:08:04 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/23 15:44:31 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:19:41 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@
 
 int	ft_print_char(char c)
 {
-	int	i;
-
-	i = 0;
 	write(1, &c, 1);
-	i++;
-	return (i);
+	return (1);
 }
 
 int	ft_print_str(char *s)

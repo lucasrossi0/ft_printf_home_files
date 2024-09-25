@@ -6,7 +6,7 @@
 /*   By: lrossi-u <lrossi-u@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:42:04 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/23 15:54:26 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:23:17 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,23 +77,18 @@ int	ft_print_unsigned(unsigned int n)
 	return (len);
 }
 
-int	ft_print_hex(unsigned int n, char letter)
+int	ft_print_hex(unsigned long n, char letter)
 {
-	char	*upper_hex_digits;
-	char	*lower_hex_digits;
+	char	*hex_digits;
 	int		len;
 
-	upper_hex_digits = "0123456789ABCDEF";
-	lower_hex_digits = "0123456789abcdef";
+	if (letter == 'X')
+		hex_digits = "0123456789ABCDEF";
+	else
+		hex_digits = "0123456789abcdef";
 	len = 0;
-
 	if (n >= 16)
 		len += ft_print_hex(n / 16, letter);
-	if (letter == 'x')
-		ft_print_char(lower_hex_digits[n % 16]);
-	else
-		ft_print_char(upper_hex_digits[n % 16]);
-	len++;
+	len += ft_print_char(hex_digits[n % 16]);
 	return (len);
 }
-

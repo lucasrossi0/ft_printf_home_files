@@ -6,7 +6,7 @@
 /*   By: lrossi-u <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 11:33:55 by lrossi-u          #+#    #+#             */
-/*   Updated: 2024/09/23 15:42:13 by lrossi-u         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:22:46 by lrossi-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_format_type(va_list arguments, char *str);
 int		ft_int_len(int n);
 int		ft_print_int(int n);
 int		ft_print_unsigned(unsigned int n);
-int		ft_print_hex(unsigned int n, char letter);
+int		ft_print_hex(unsigned long n, char letter);
 int		ft_print_ptr(void *ptr);
 
 #endif
